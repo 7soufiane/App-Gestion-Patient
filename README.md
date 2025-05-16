@@ -1,30 +1,32 @@
-# Application de Gestion des Patients
+# App-Gestion-Patient
 
-## Description du Projet
+## 🩺 Overview
 
-Cette application web JEE basée sur Spring MVC, Thymeleaf et Spring Data JPA permet la gestion des patients d'un établissement médical. Elle offre une interface simple et intuitive pour visualiser les informations des patients.
+`App-Gestion-Patient` est une application web Java construite avec **Spring MVC**, **Thymeleaf** et **Spring Data JPA**, conçue pour la gestion des dossiers patients dans un établissement médical. Elle offre une interface conviviale permettant aux professionnels de santé de consulter, créer et supprimer des fiches patients facilement.
 
-## Fonctionnalités Implémentées
+---
 
-- ✅ **Affichage des patients** : Les patients sont affichés sous forme de tableau structuré, contenant des informations essentielles telles que leur **ID**, **nom**, **date de naissance**, **état de santé** et **score**. Une barre de recherche et des filtres sont disponibles pour faciliter la navigation et la sélection des patients.
-- ✅ **Pagination** : Pour améliorer la navigation et l’expérience utilisateur, le tableau est paginé, permettant d’afficher un nombre limité de patients par page. L’utilisateur peut facilement naviguer entre les pages à l’aide de boutons "Suivant" et "Précédent".
-- ✅ **Création des patients** : Un formulaire dédié permet l'ajout de nouveaux patients. Ce formulaire inclut des champs obligatoires pour saisir les informations essentielles du patient. Une validation des données est mise en place afin d’assurer l’intégrité des informations enregistrées. Après soumission, le patient est ajouté à la base de données et visible dans la liste des patients.
-- ✅ **Suppression des patients** : Un bouton de suppression est disponible pour chaque patient dans la liste. Lorsqu’un utilisateur souhaite supprimer un patient, une confirmation est demandée afin d’éviter toute suppression accidentelle. Une fois la suppression confirmée, le patient est retiré de la base de données et du tableau d'affichage.
+## ✨ Fonctionnalités
 
+- **📋 Liste des Patients** : Tableau avec détails essentiels (ID, nom, date de naissance, état de santé, score), recherche et filtres intégrés.
+- **🔄 Pagination** : Navigation fluide entre les pages avec boutons « Précédent » et « Suivant ».
+- **➕ Création de Patient** : Formulaire avec champs obligatoires et validation côté serveur. Le patient ajouté s'affiche immédiatement.
+- **🗑️ Suppression de Patient** : Bouton de suppression avec confirmation. Les patients sont supprimés de la base de données et de l'affichage.
 
-## Captures d'Écran
-![Capture d'écran de l'application](./screenshots/index.png)
-![Capture d'écran de l'application](./screenshots/createPatient.png)
-![Capture d'écran de l'application](./screenshots/errorCreatePatient.png)
+---
 
-## Technologies Utilisées
-- **Spring MVC** : Architecture Model-View-Controller
-- **Spring Data JPA** : Accès simplifié aux données
-- **Thymeleaf** : Moteur de template côté serveur
-- **Bootstrap 5** : Framework CSS pour l'interface utilisateur
-- **Font Awesome** : Bibliothèque d'icônes
+## 🛠️ Technologies Utilisées
 
-## Structure du Projet
+- **Spring MVC** : Architecture Modèle-Vue-Contrôleur.
+- **Spring Data JPA** : Accès aux données avec MySQL.
+- **Thymeleaf** : Moteur de templates pour le rendu HTML dynamique.
+- **Bootstrap 5** : Design responsive et moderne.
+- **Font Awesome** : Icônes pour une meilleure UX.
+
+---
+
+## 📁 Structure du Projet
+
 
 ```
 src/
@@ -47,12 +49,78 @@ src/
 │       └── application.properties
 ```
 
-## Comment exécuter l'application
 
-1. Cloner le dépôt Git
-2. Configurer la base de données dans `application.properties`
-3. Exécuter l'application avec Maven :
-   ```
-   mvn spring-boot:run
-   ```
-4. Accéder à l'application via : http://localhost:8080/index
+---
+
+## ⚙️ Prérequis
+
+- Java 21+
+- Maven
+- MySQL (ou équivalent)
+- XAMPP (ou autre outil pour exécuter MySQL en local)
+
+---
+
+## 🚀 Installation
+
+1. **Cloner le dépôt** :
+   ```bash
+   git clone https://github.com/7soufiane/App-Gestion-Patient.git
+   cd App-Gestion-Patient
+
+## 🛠️ Configuration de la base de données
+
+1. Lancer **MySQL** via **XAMPP** ou tout autre outil.
+2. Créer une base de données nommée `patientsdb`.
+3. Modifier le fichier `src/main/resources/application.properties` :
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/patientsdb?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+```
+## 🚀 Lancement de l'application
+
+Pour démarrer l'application, exécute la commande suivante :
+
+```bash
+mvn spring-boot:run
+```
+## 📌 Utilisation
+
+- 👁️ **Voir les patients** : Accède à `/index` pour afficher la liste des patients avec options de recherche et pagination.
+- ➕ **Ajouter un patient** : Accède à `/createPatient`, remplis le formulaire et soumets-le.
+- 🗑️ **Supprimer un patient** : Clique sur le bouton de suppression associé à un patient. Une confirmation est demandée.
+
+## 🤝 Contribuer
+
+Les contributions sont les bienvenues ! Voici comment participer :
+
+1. **Forker** le dépôt.
+2. Créer une nouvelle branche :
+   ```bash
+   git checkout -b feature/nom-de-votre-feature
+3. Ajouter vos modifications :
+   ```bash
+   git commit -m "Ajout de [votre fonctionnalité]"
+
+4. Pousser la branche :
+   ```bash
+   git push origin feature/nom-de-votre-feature
+
+5. Ouvrir une Pull Request.
+
+## 📄 Licence
+
+Ce projet est sous licence **MIT** – voir le fichier [LICENSE](LICENSE) pour plus d’informations.
+
+---
+
+## 📬 Contact
+
+Pour toute question ou suggestion :
+
+- GitHub : [7soufiane](https://github.com/7soufiane)
