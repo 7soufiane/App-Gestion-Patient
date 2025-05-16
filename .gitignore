@@ -1,0 +1,23 @@
+# Java/Spring Boot
+target/
+*.class
+*.jar
+*.war
+*.ear
+.m2/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+
+# Dependency directories
+/bin/
+/build/
+
+# OS generated files
+.DS_Store
+Thumbs.db
